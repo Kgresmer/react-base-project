@@ -16,7 +16,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <NavBar/>
+                <NavBar sections={[{link: "#", name: "Kevin"}]} title={this.state.title}/>
                 <h2>{this.state.title + " " + this.state.count}</h2>
                 <h4>{this.state.dateTime.toISOString()}</h4>
                 <button id={'buttonOne'} onClick={this.handleClick}>
