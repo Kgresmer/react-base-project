@@ -4,12 +4,14 @@ import NavBar from "./navbar/navbar";
 
 class Home extends React.Component {
 
-    state = { title: 'class component', count: 1, dateTime: new Date()};
+    state = {title: 'class component', count: 1, dateTime: new Date()};
 
     handleClick = (event) => {
-        this.setState({title: 'clicked class component',
+        this.setState({
+            title: 'clicked class component',
             count: this.state.count += 1,
-            dateTime: new Date()});
+            dateTime: new Date()
+        });
         console.log(event)
     };
 
@@ -17,18 +19,20 @@ class Home extends React.Component {
         return (
             <div>
                 <NavBar sections={[{link: "#", name: "Kevin"}]} title={this.state.title}/>
-                <h2>{this.state.title + " " + this.state.count}</h2>
-                <h4>{this.state.dateTime.toISOString()}</h4>
-                <button id={'buttonOne'} onClick={this.handleClick}>
-                    {this.props.label}
-                </button>
+                <div style={{display: 'block'}}>
+                    <h2>{this.state.title + " " + this.state.count}</h2>
+                    <h4>{this.state.dateTime.toISOString()}</h4>
+                    <button id={'buttonOne'} onClick={this.handleClick}>
+                        {this.props.label}
+                    </button>
+                </div>
             </div>
         );
     }
 }
 
 ReactDom.render(
-    <Home label="Alter" />, document.getElementById('app')
+    <Home label="Alter"/>, document.getElementById('app')
 );
 
 module.hot.accept();
