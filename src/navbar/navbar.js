@@ -32,7 +32,7 @@ export default class NavBar extends Component {
             <div className="topNav" id="topNavContainer">
                 <a href="#" className="listItemStyles">{title}</a>
                 {sections.map((section) => {
-                    return <a href={section.link}>{section.name}</a>
+                    return <a key={section.name} href={section.link}>{section.name}</a>
                 })}
             </div>
         )
