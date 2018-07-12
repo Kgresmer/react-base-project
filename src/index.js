@@ -6,7 +6,7 @@ class Home extends React.Component {
     state = { title: 'class component', count: 1};
 
     handleClick = () => {
-        this.setState({title: 'clicked class component', count: count++})
+        this.setState({title: 'clicked class component', count: this.state.count += 1})
     };
 
     render() {
