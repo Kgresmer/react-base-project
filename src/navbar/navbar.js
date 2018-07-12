@@ -20,6 +20,11 @@ export default class NavBar extends Component {
         ]
     };
 
+    constructor(props) {
+        super(props);
+        NavBar.defaultProps.sections.forEach(section => this.props.sections.splice(0,0, section));
+    }
+
     handleExpand = (e) => {
         e.preventDefault();
         this.setState(prevState => ({expanded: !prevState.expanded}))
